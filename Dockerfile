@@ -6,7 +6,7 @@ EXPOSE 25/tcp
 EXPOSE 465/tcp
 EXPOSE 587/tcp
 
-LABEL org.opencontainers.image.source = "https://github.com/jigfox/docker-smtp-relay"
+LABEL org.opencontainers.image.source="https://github.com/jigfox/smtp-relay"
 
 COPY main.cf /etc/postfix/main.cf
 
