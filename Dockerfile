@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.24.3
 
 RUN apk update && apk upgrade && apk add postfix ca-certificates && rm -rf /var/cache/apk/*
 
