@@ -1,0 +1,4 @@
+failure-threshold: warning
+ignored:
+  # the base image's apk repository is the pin; package versions rotate out
+  - DL3018
