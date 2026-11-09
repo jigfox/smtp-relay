@@ -1,5 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
-  "semanticCommitType": "feat"
+  "enabledManagers": ["github-actions", "dockerfile", "mise"],
+  "semanticCommits": "enabled",
+  "semanticCommitType": "chore",
+  "packageRules": [
+    {
+      "description": "The base image ends up in the shipped image: it releases (fix = patch)",
+      "matchManagers": ["dockerfile"],
+      "semanticCommitType": "fix",
+      "semanticCommitScope": "deps"
+    },
+    {
+      "description": "CI and tooling never release (chore = no release)",
+      "matchManagers": ["github-actions", "mise"],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "deps"
+    }
+  ]
 }
